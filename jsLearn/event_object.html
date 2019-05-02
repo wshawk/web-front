@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>事件对象</title>
+        <script>
+            window.onload = function(){
+            var mouseArea = document.getElementById("mouseArea");
+            var showMsg = document.getElementById("showMsg")
+            mouseArea.onmousemove = function(event){
+               showMsg.innerText = "X:"+ event.clientX + "   Y:" + event.clientY 
+            }
+            }
+        </script>
+        <style>
+            body{
+                margin:0 auto;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="mouseArea" style="height:200px;width:500px;border:1px;background:rgb(82, 226, 231); margin: 0 auto;"></div><br><br>
+    <div id="showMsg" style="height:40px;width:170px;border:1px;background:rgb(138, 187, 202);text-align: center; margin:0 auto;"></div>
+    </body>
+</html>

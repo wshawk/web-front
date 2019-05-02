@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>事件冒泡</title>
+        <style>
+            #box{
+                width: 300px;
+                height: 100px;
+                background-color: aquamarine; 
+            }
+            #span{
+                background-color: blueviolet
+            }
+        </style>
+        <script>
+            window.onload = function(){
+
+                let span = document.getElementById("span")
+                span.onclick = function(event){
+                    alert("i am span response ")
+                    event.cancelBubble = true
+                }
+
+                let box = document.getElementById("box")
+                box.onclick = function(){
+                    alert("i am div response ")
+                }
+
+               document.body.onclick = function(){
+                alert("i am body response ")
+               }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="box">
+            i am box
+            <span id="span">i am span</span>
+        </div>
+    </body>
+</html>

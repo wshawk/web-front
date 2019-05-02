@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>事件委派</title>
+        <style>
+        </style>
+        <script>
+            window.onload = function(){
+                    let button = document.getElementById("btn");
+                    let ul = document.getElementById("ul")
+                    button.onclick = function(){
+                        let li = document.createElement("li")
+                        li.innerHTML = '<a class="link" href=javascript:;>新建的超链接</a>'
+                        ul.appendChild(li)
+                    }
+
+                    
+                    // let allA = document.getElementsByTagName("a")
+                    // for(let i = 0; i < allA.length; i++){
+                    //     allA[i].onclick = function(){
+                    //         alert(" it is a test")
+                    //     }
+                    // }
+                    ul.onclick =function(event){
+                        // 方法一
+                        // if(event.target == "javascript:;"){
+                        //     alert("success")
+                        // }
+                        
+                        // 方法二
+                        if(event.target.className == "link"){
+                            alert("onclik in the a node")
+                        }
+                    }
+            }
+        </script>
+    </head>
+    <body>
+        <button id="btn">添加一个超链接</button>
+        <ul id="ul" style="background-color:cyan">
+            <li><a class="link" href=javascript:; id="test">超链接</a></li>
+            <li><a class="link" href=javascript:;>超链接</a></li>
+            <li><a class="link" href=javascript:;>超链接</a></li>
+        </ul>
+    </body>
+</html>

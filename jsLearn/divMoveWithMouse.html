@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>div随着鼠标移动</title>
+        <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            position: absolute
+        }
+        </style>
+        <script>
+            window.onload = function(){
+                var box = document.getElementById("box")
+                document.onmousemove = function(event){
+                    let left = event.clientX
+                    let top = event.clientY
+
+                    box.style.left = left + "px"
+                    box.style.top = top + "px"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="box"></div>
+    </body>
+</html>

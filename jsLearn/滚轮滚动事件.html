@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>滚轮滚动事件</title>
+        <script>
+        window.onload = function(){
+            var box = document.getElementById("box")
+            box.onmousewheel = function(event){
+                if(event.wheelDelta >0){
+                   box.style.height = box.clientHeight - 10 +"px"
+                }else{
+                   box.style.height = box.clientHeight + 10 +"px"
+                }
+            }
+        }
+        </script>
+        <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: cornflowerblue;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+    </body>
+</html>

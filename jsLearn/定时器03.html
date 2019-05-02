@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>定时器setInterval()</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #box{
+                height: 100px;
+                width: 100px;
+                position: absolute;
+                background-color: aqua
+            }
+        </style>
+        <script>
+            window.onload = function(){
+                var box = document.getElementById("box")
+                var btn = document.getElementById("btn")
+                var stopMove = document.getElementById("stopMove")
+                btn.onclick = function(){
+                    var int = setInterval(moveRight,1000)
+                }
+                var newValue = 0;
+                function moveRight(){
+                   newValue+=20
+                   box.style.left = newValue+"px"
+                }
+                stopMove.onclick = function(){
+                    clearInterval(1)
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <button id="btn">点击按钮使div向右移动</button>&nbsp;&nbsp;<button id="stopMove">点击按钮停止移动</button>
+        <br><br>
+        <div id="box"></div>
+    </body>
+</html>

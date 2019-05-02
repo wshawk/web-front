@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>定时器setInterval()</title>
+        <script>
+            window.onload = function(){
+                var body = document.body;
+                let i = 0
+                function creatH1(){
+                    body.innerHTML = "<h1> it is a test for setInterval(" + i + ") </h1>"
+                    i++
+                }
+                setInterval(creatH1,1)
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

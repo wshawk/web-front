@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html style="height:1040px">
+    <head>
+        <meta charset="utf-8"/>
+        <title>拖拽练习</title>
+        <style>
+            #box{
+                height: 200px;
+                width: 200px;
+                background-color: aquamarine;
+                position: absolute
+            }
+        </style>
+        <script>
+            window.onload = function(){
+            var box = document.getElementById("box")
+            box.onmousedown = function(event){
+                let moveX = event.offsetX
+                let moveY = event.offsetY
+                    document.onmousemove = function(event){
+                        if(box.offsetLeft < 0||box.offsetTop<0||box.offsetLeft > (document.body.clientWidth - 200)||box.offsetHeight > (document.body.clientHeight - 200)){
+                            alert("不能拖出屏幕")
+                            console.log("box.offsetLeft",box.offsetLeft)
+                            console.log("box.offsetTop",box.offsetTop)
+                            box.style.left = 8 +"px"
+                            box.style.top = 8 +"px"
+                            console.log("box.style.left",box.style.left)
+                            console.log("box.offsetTop",box.offsetTop)
+                            document.onmousemove = false 
+                           
+                        }else{
+                        box.style.left = (event.clientX - moveX )+ "px"
+                        box.style.top = (event.clientY  - moveY)+ "px"
+                        }
+                    }
+                    document.onmouseup =function(event){
+                        document.onmousemove = false
+                }
+            }
+            
+            }
+        </script>
+    </head>
+    <body >
+        <div id="box">
+
+        </div>
+    </body>
+</html>
